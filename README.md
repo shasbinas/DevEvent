@@ -1,8 +1,7 @@
 <div align="center">
   <br />
     <a href="https://github.com/shasbinas/DevEvent" target="_blank">
-      <img src="https://img.icons8.com/cloud/100/4facfe/ticket.png" alt="DevEvent Logo" width="100">
-    </a>
+     
   <br />
 
   <h1>DevEvent</h1>
