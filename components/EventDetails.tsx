@@ -37,7 +37,7 @@ const EventDetails = async ({ params }: { params: Promise<string> }) => {
     await connectDB();
     const slug = await params;
 
-    const event = await Event.findOne({ slug }).lean();
+    const event = await Event.findOne({ slug }).lean() as unknown as IEvent;
 
     if (!event) return notFound();
 
@@ -98,7 +98,7 @@ const EventDetails = async ({ params }: { params: Promise<string> }) => {
                             <p className="text-sm">Be the first to book your spot!</p>
                         )}
 
-                        <BookEvent eventId={event._id} slug={event.slug} />
+                        <BookEvent eventId={event._id.toString()} slug={event.slug} />
                     </div>
                 </aside>
             </div>
