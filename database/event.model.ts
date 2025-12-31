@@ -1,4 +1,4 @@
-import { Schema, model, models, Document } from 'mongoose';
+import { Schema, model, models, Document, Model } from 'mongoose';
 
 // TypeScript interface for Event document
 export interface IEvent extends Document {
@@ -184,6 +184,6 @@ EventSchema.index({ slug: 1 }, { unique: true });
 // Create compound index for common queries
 EventSchema.index({ date: 1, mode: 1 });
 
-const Event = models.Event || model<IEvent>('Event', EventSchema);
+const Event = (models.Event as Model<IEvent>) || model<IEvent>('Event', EventSchema);
 
 export default Event;
